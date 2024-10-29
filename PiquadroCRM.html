@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piquadro Club Registration</title>
+    <style>
+        /* CSS Styles */
+
+        /* Font Import */
+        @font-face {
+            font-family: 'Apex New';
+            src: url(data:font/woff;base64,d09GRgABAAAAA... [base64 string continues]) format('woff'); /* Replace with your actual Base64 string */
+        }
+
+        body {
+            font-family: 'Apex New', Arial, sans-serif;
+            background: linear-gradient(to bottom, #2e2e2e, #ffffff); /* Dark grey to white gradient */
+            margin: 0;
+            color: #ccff00;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .container {
+            background-color: rgba(62, 62, 62, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            max-width: 90%;
+            margin: 20px auto;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 20px auto;
+            width: 150px;
+        }
+
+        h1, h2 {
+            color: #ccff00;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            color: #ccff00;
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        input, select, textarea, button {
+            font-family: 'Apex New', Arial, sans-serif;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #555;
+            background-color: #444;
+            color: #ccff00;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .checkbox-group {
+            margin-bottom: 20px;
+        }
+
+        .checkbox-group label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #4a90e2;
+        }
+
+        button {
+            background-color: #ccff00;
+            color: #2e2e2e;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            padding: 10px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #b3e600;
+        }
+
+        .thank-you-page {
+            display: none;
+        }
+
+        #output {
+            border: 1px solid #555;
+            padding: 20px;
+            background-color: #3e3e3e;
+            color: #ccff00;
+            margin-top: 20px;
+        }
+
+        p, h3 {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="form-page">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAADcCAYAAABgPswvAAAABHNCSVQICAgIfAhkiAAA... [base64 string continues]" alt="Piquadro Logo" class="logo">
+        <h1>Piquadro Club Registration</h1>
+        <form id="customerForm">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" required>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" required>
+
+            <label for="nationality">Nationality:</label>
+            <input type="text" id="nationality" required>
+
+            <h3>Your Privacy is Extremely Important to Us</h3>
+            <p>
+                In order to benefit from the services, privileges and promotions reserved for Piquadro Club, please carefully read the privacy note and tick the boxes below to confirm that you have read and understood its content and give your express, free and informed consent to:
+            </p>
+
+            <!-- Privacy Policy Questions -->
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" id="marketingYes">
+                    I agree to receive marketing information via email, SMS, etc.
+                </label>
+                <label>
+                    <input type="checkbox" id="marketingNo">
+                    I do not agree to receive marketing information.
+                </label>
+            </div>
+
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" id="profilingYes">
+                    I agree to profiling for personalized communications.
+                </label>
+                <label>
+                    <input type="checkbox" id="profilingNo">
+                    I do not agree to profiling.
+                </label>
+            </div>
+
+            <!-- Additional Opt-In for Emails -->
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" id="emailOffersYes">
+                    I do want to receive emails on products or services similar to those I have purchased.
+                </label>
+                <label>
+                    <input type="checkbox" id="emailOffersNo">
+                    I do not want to receive emails on similar products or services.
+                </label>
+            </div>
+
+            <p>
+                Your membership to "Piquadro Club" is free and not conditional upon the consents requested in the present card. Even without your consent, we may use your email address communicated to us to send offers, provided the products are similar to those purchased unless you object.
+            </p>
+
+            <button type="button" id="submitBtn">Submit</button>
+        </form>
+    </div>
+
+    <!-- Thank You Page -->
+    <div class="container thank-you-page" id="thank-you-page">
+        <h2>Thank you for your registration!</h2>
+        <p>Your details are as follows:</p>
+        <div id="output">
+            <p id="outputFirstName"></p>
+            <p id="outputLastName"></p>
+            <p id="outputEmail"></p>
+            <p id="outputPhone"></p>
+            <p id="outputDob"></p>
+            <p id="outputNationality"></p>
+            <p id="outputMarketing"></p>
+            <p id="outputProfiling"></p>
+            <p id="outputEmailOffers"></p>
+        </div>
+    </div>
+
+    <!-- JavaScript Code -->
+    <script>
+        // JavaScript to handle form submission and display
+    </script>
+</body>
+</html>
